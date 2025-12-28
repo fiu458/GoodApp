@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #1e1e2f;
+    color: #fff;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #ff6b6b;
+}
+
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn-primary {
+    background-color: #ff6b6b;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #ff4757;
+}
+
+
+.features {
+    padding: 4rem 2rem;
+    background-color: #fff;
+    text-align: center;
+}
+
+.feature-list {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-item {
+    background-color: #f1f1f1;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 250px;
+}
+
+
+.download {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #e2e2e2;
+}
+
+.download a {
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+
+footer {
+    padding: 2rem;
+    text-align: center;
+    background-color: #1e1e2f;
+    color: #fff;
+}
+
+#mobile-block {
+    display: none;
+    height: 100vh;
+    background: linear-gradient(135deg, #1e1e2f, #111);
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+#mobile-block h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
