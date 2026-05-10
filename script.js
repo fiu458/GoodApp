@@ -1,5 +1,5 @@
 (() => {
-    document.addEventListener("DOMContentLoaded", () => {
+    const init = () => {
         const menuButton = document.querySelector(".menu-toggle");
         const navLinks = document.querySelector(".nav-links");
         const sectionLinks = document.querySelectorAll('.nav-links a[href^="#"]');
@@ -133,5 +133,11 @@
 
             sections.forEach((section) => sectionObserver.observe(section));
         }
-    });
+    };
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", init, { once: true });
+    } else {
+        init();
+    }
 })();
