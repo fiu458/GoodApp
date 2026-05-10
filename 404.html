@@ -50,7 +50,7 @@
     </header>
 
     <main id="top" class="error-main">
-        <section class="hero error-hero container reveal" aria-labelledby="error-title">
+        <section class="hero error-hero container" aria-labelledby="error-title">
             <div class="hero-copy">
                 <p class="eyebrow">404 error</p>
                 <h1 id="error-title">Page not found.</h1>
@@ -62,7 +62,7 @@
                     <a class="btn btn-ghost" href="https://fiu458.github.io/GoodApp/#download">Download</a>
                 </div>
             </div>
-            <div class="hero-media reveal-delay">
+            <div class="hero-media">
                 <div class="shot-card">
                     <img id="app-shot" src="GoodAppSrc.png" alt="GoodApp application screenshot">
                 </div>
@@ -87,7 +87,7 @@
                     <span class="sr-only">TikTok</span>
                 </a>
             </div>
-            <p>&copy; <span id="year"></span> GoodApp</p>
+            <p>&copy; <span id="year">2026</span> GoodApp</p>
         </div>
     </footer>
 
@@ -95,14 +95,39 @@
         (() => {
             const assetBase = window.goodAppAssetBase || "";
             const appShot = document.getElementById("app-shot");
-            const script = document.createElement("script");
+            const yearEl = document.getElementById("year");
+            const menuButton = document.querySelector(".menu-toggle");
+            const navLinks = document.querySelector(".nav-links");
 
             if (appShot) {
                 appShot.src = `${assetBase}GoodAppSrc.png`;
             }
 
-            script.src = `${assetBase}script.js`;
-            document.body.appendChild(script);
+            if (yearEl) {
+                yearEl.textContent = new Date().getFullYear();
+            }
+
+            if (menuButton && navLinks) {
+                menuButton.addEventListener("click", () => {
+                    const expanded = menuButton.getAttribute("aria-expanded") === "true";
+                    menuButton.setAttribute("aria-expanded", String(!expanded));
+                    navLinks.classList.toggle("open");
+                });
+
+                navLinks.querySelectorAll("a").forEach((link) => {
+                    link.addEventListener("click", () => {
+                        menuButton.setAttribute("aria-expanded", "false");
+                        navLinks.classList.remove("open");
+                    });
+                });
+
+                document.addEventListener("click", (event) => {
+                    if (!navLinks.contains(event.target) && !menuButton.contains(event.target)) {
+                        menuButton.setAttribute("aria-expanded", "false");
+                        navLinks.classList.remove("open");
+                    }
+                });
+            }
         })();
     </script>
 </body>
