@@ -1,4 +1,4 @@
-﻿:root {
+:root {
     --bg: #08131d;
     --bg-soft: #0f1e2b;
     --surface: rgba(9, 24, 37, 0.76);
@@ -211,6 +211,11 @@ body.modal-open {
     width: min(1140px, 92vw);
     max-width: calc(100vw - 32px);
     padding: 72px 0;
+}
+
+.error-page .reveal {
+    opacity: 1;
+    transform: none;
 }
 
 .error-hero .hero-copy {
